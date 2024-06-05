@@ -12,9 +12,12 @@ function App() {
   const addValue = () => {
     if (counter < 20){
       console.log("Clicked to Add");
-      counter = counter + 1;
+      counter = counter + 1;                               
       setWarning('');
       setCounter(counter)
+
+      // callback in setCounter
+      // setCounter( (prevCounter) => prevCounter + 4)
     }
     if (counter === 20){
       setWarning(`Warning: Counter is at Maximum Value of 20`)
@@ -35,6 +38,8 @@ function App() {
     if (counter > 0){
       console.log("Click to Remove")
       setCounter(counter - 1)
+      // callback in setCounter
+      // setCounter( (removeCounter) => removeCounter - 4)
       setWarning('');
     }
     if (counter === 1){
