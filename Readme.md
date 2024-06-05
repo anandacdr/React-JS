@@ -10,6 +10,9 @@ OR,
 ## Using Vite
 Vite: `bun create vite` or, `npm create vite@latest`
 
+## Install
+`npm i`
+
 ## To Run Project
 `npm run dev`
 
