@@ -19,7 +19,7 @@ function App() {
         
         
       </main>
-      <footer className="p-3 text-white bg-gray-800">
+      <footer className="p-3 bg-gray-800 text-gray">
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-11 lg:grid-cols-3 xl:grid-cols-5">
           <button className="px-4 py-2 m-2 text-white bg-red-500 rounded cursor-pointer" onClick={() => handleColorChange("bg-red-500")}>Red</button>
           <button className="px-4 py-2 m-2 text-white bg-green-500 rounded cursor-pointer" onClick={() => handleColorChange("bg-green-500")}>Green</button>
