@@ -10,6 +10,7 @@ function App() {
 
   // useRef hook
   const passwordRef = useRef(null)
+  const messageRef = useRef(null)
 
 
   const passwordGenerator = useCallback(() => {
@@ -32,7 +33,13 @@ function App() {
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select()
     passwordRef.current?.setSelectionRange(0,100)
-    window.navigator.clipboard.writeText(password)
+    window.navigator.clipboard.writeText(password).then(() => {
+      messageRef.current.innerHTML = "copied"
+    }, (err) => {
+      messageRef.current.innerHTML = "failed to copy"
+    })
+
+
   }, [password])
 
   // to call -> new hook - useEffect Hook
@@ -57,12 +64,13 @@ function App() {
           
         />
         <button
-          className="bg-blue-800 text-white px-3
-          py-0.5 shrink-0"
+          className="bg-blue-500 text-white px-3 m-4
+          py-0.5 shrink-0 text-xs"
           onClick={copyPasswordToClipboard}
         >
           copy
         </button>
+        <span ref={messageRef} className="ml-2 self-center"></span>
       </div>
 
       <div className="flex text-sm gap-x-2 text-white">
