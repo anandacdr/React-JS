@@ -11,7 +11,7 @@ OR,
 Vite: `bun create vite` or, `npm create vite@latest`
 
 ## Install
-`npm i`
+`npm i` or  `bun i`
 
 ## To Run Project
 `npm run dev`
@@ -19,3 +19,26 @@ Vite: `bun create vite` or, `npm create vite@latest`
 ### Tips:
 
 ``1. File name is on Capital in First Letter``
+
+## Install of, TailwindCSS
+
+
+### 1. Install Tailwind CSS
+   - `npm install -D tailwindcss postcss autoprefixer`
+   - `npx tailwindcss init -p`
+
+
+### 2. Configure Your Template Paths
+
+filname: **tailwind.config.js**
+
+    content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",  ],
+  
+### 3. Add the Tailwind directives to your CSS in index.css
+`
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+`
