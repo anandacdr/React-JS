@@ -37,9 +37,7 @@ filname: **tailwind.config.js**
     "./src/**/*.{js,ts,jsx,tsx}",  ],
   
 ### 3. Add the Tailwind directives to your CSS in index.css
-`
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-`
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
