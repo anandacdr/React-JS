@@ -14,7 +14,7 @@ Vite: `bun create vite` or, `npm create vite@latest`
 `npm i` or  `bun i`
 
 ## To Run Project
-`npm run dev`
+`npm run dev` or `bun run dev`
 
 ### Tips:
 
@@ -41,4 +41,5 @@ filname: **tailwind.config.js**
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 `
