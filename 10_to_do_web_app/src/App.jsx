@@ -1,16 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { TodoProvider } from "./contexts";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([]);
+
+  // Define - How it works
+  const addTodo = (todo) => {
+    setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
+  };
+
+  // Update To Do
+  const updateTodo = (id, todo) => {
+    setTodos((prev) =>
+      prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))
+    );
+  };
+
+  // DeleteToDo
+  const deleteTodo = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
 
   return (
-    <>
-    <h2 className='text-3xl '>To-Do Application using Context API</h2>
-    </>
-  )
+    <TodoProvider
+      value={{ todos, addTodo, updatedTodo, deleteTodo, toggleComplete }}
+    >
+      {/* <h2 className='text-3xl '>To-Do Application using Context API</h2> */}
+
+      <div className="bg-[#172842] min-h-screen py-8">
+        <div className="w-full max-w-2xl mx-auto shadow-md px-4 py-3 text-white">
+          <h1 className="text-2xl font-bold text-center mb-8 mt-2">
+            Manage Your To-Dos
+          </h1>
+
+          <div className="mb-4">{/* To Do Form goes here, */}</div>
+
+          <div className="flex flex-wrap gap-y-3">
+            {/* Loop and Add Todo Item here */}
+          </div>
+        </div>
+      </div>
+    </TodoProvider>
+  );
 }
 
-export default App
+export default App;
