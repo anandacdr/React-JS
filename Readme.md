@@ -10,6 +10,9 @@ OR,
 ## Using Vite
 Vite: `bun create vite` or, `npm create vite@latest`
 
+## change Dir
+`cd **Project_Name**`
+
 ## Install
 `npm i` or  `bun i`
 
