@@ -22,6 +22,17 @@ function App() {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
+  // Toggle Complete
+  const toggleComplete = (id) => {
+    setTodos((prev) =>
+      prev.map((prevTodo) =>
+        prevTodo === id
+          ? { ...prevTodo, completed: !prevTodo.completed }
+          : prevTodo
+      )
+    );
+  };
+
   return (
     <TodoProvider
       value={{ todos, addTodo, updatedTodo, deleteTodo, toggleComplete }}
