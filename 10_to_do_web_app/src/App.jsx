@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TodoProvider } from "./contexts";
 import "./App.css";
 
@@ -33,9 +33,18 @@ function App() {
     );
   };
 
+  //
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos"))
+
+    
+
+  }, [])
+  
+
   return (
     <TodoProvider
-      value={{ todos, addTodo, updatedTodo, deleteTodo, toggleComplete }}
+      value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
     >
       {/* <h2 className='text-3xl '>To-Do Application using Context API</h2> */}
 

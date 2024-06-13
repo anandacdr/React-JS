@@ -12,7 +12,7 @@ export default TodoContext = createContext({
 
   // Methods of Context
   addTodo: (todo) => {},
-  updatedTodo: (id, todo) => {},
+  updateTodo: (id, todo) => {},
   deleteTodo: (id) => {},
   toggleComplete: (id) => {},
 });
