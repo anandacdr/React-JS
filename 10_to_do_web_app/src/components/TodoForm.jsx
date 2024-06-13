@@ -4,7 +4,7 @@ import { useTodo } from "../contexts";
 function TodoForm() {
   // for Individual Todo
   const [todo, setTodo] = useState("");
-  const { addTodo } = useTodo();
+  const {addTodo} = useTodo();
 
   // make method
   const add = (e) => {

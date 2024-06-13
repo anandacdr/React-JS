@@ -5,7 +5,7 @@ export default TodoContext = createContext({
   todos: [
     {
       id: 1,
-      todo: "Todo Message",
+      todo: "Todo msg",
       completed: false,
     },
   ],
@@ -14,7 +14,7 @@ export default TodoContext = createContext({
   addTodo: (todo) => {},
   updateTodo: (id, todo) => {},
   deleteTodo: (id) => {},
-  toggleComplete: (id) => {},
+  toggleComplete: (id) => {}
 });
 
 export const useTodo = () => {
