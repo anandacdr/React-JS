@@ -37,10 +37,20 @@ function App() {
   useEffect(() => {
     const todos = JSON.parse(localStorage.getItem("todos"))
 
-    
+    if (todos && todos.length > 0) {
+      setTodos(todos)
+    }
+
 
   }, [])
+
+
+  // another useEffect
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos])
   
+
 
   return (
     <TodoProvider
@@ -54,7 +64,10 @@ function App() {
             Manage Your To-Dos
           </h1>
 
-          <div className="mb-4">{/* To Do Form goes here, */}</div>
+          <div className="mb-4">
+            {/* To Do Form goes here, */}
+            
+          </div>
 
           <div className="flex flex-wrap gap-y-3">
             {/* Loop and Add Todo Item here */}
