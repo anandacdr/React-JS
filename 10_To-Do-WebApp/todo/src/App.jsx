@@ -10,6 +10,18 @@ function App() {
     <>
     <div className="text-3xl">
       <h1>TO-DO-Application</h1>
+      
+      <input type="text"
+      className='text-2xl'
+      placeholder='Enter Name'
+      
+      />
+      </div>
+      <input type="number"
+      className='text-2xl'
+      placeholder='Enter Number'
+      
+      />
       </div>
     </>
   )
